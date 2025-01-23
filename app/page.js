@@ -30,7 +30,7 @@ function HomePage() {
                 Przejdź do profilu
               </div>
             </Link>
-            <Link href="/user/logout">
+            <Link href="/user/signout">
               <div className="py-2 px-6 rounded-lg text-white bg-red-500 hover:bg-red-600 transition duration-300 shadow-lg">
                 Wyloguj się
               </div>
@@ -48,7 +48,7 @@ function HomePage() {
             aby uzyskać więcej funkcji.
           </p>
           <div className="flex space-x-4">
-            <Link href="/user/login">
+            <Link href="/user/signin">
               <div className="py-2 px-6 rounded-lg text-white bg-blue-500 hover:bg-blue-600 transition duration-300 shadow-lg">
                 Zaloguj się
               </div>

@@ -1,39 +1,34 @@
-"use client"
+"use client";
+import Image from 'next/image';
 import Link from "next/link";
-import { useAuth } from "@/app/lib/AuthContext";
-import { useRouter } from "next/navigation";
 
 export default function Header() {
-  const { user, logout } = useAuth();
-  const router = useRouter();
-
-  const handleLogout = async () => {
-    await logout();
-    router.push("/"); // Przekierowanie na stronę główną
-  };
-
   return (
-    <header className="bg-white shadow-md">
-      <div className="container mx-auto px-4 py-4 flex items-center justify-between">
-        <h1 className="text-2xl font-bold text-blue-600">My App</h1>
-        <nav className="flex space-x-4">
-          {user ? (
-            <>
-              <Link href="/user/profile" className="text-gray-700 hover:text-blue-500">
-                Profile
-              </Link>
-              <button
-                onClick={handleLogout}
-                className="text-gray-700 hover:text-blue-500"
-              >
-                Logout
-              </button>
-            </>
-          ) : (
-            <Link href="/user/signin" className="text-gray-700 hover:text-blue-500">
-              Login
-            </Link>
-          )}
+    <header className="bg-black shadow-md sticky top-0 z-50">
+      <div className="container mx-auto flex items-center justify-between py-4 px-6">
+        {/* Logo */}
+        <div className="flex items-center space-x-4">
+            <Image src="/public/images/logo_icon.png" alt="Duda Athletics Logo" width={100} height={100} /><img src="/media/logo_icon.png" alt="Logo Icon" className="w-12 h-12" />
+            <h1 className="text-xl font-bold text-gold-vegas">Duda Athletics</h1>
+        </div>
+
+        {/* Nawigacja */}
+        <nav className="flex space-x-6">
+          <Link href="/" className="text-white hover:text-gold-vegas">
+            Home
+          </Link>
+          <Link href="/about" className="text-white hover:text-gold-vegas">
+            About
+          </Link>
+          <Link href="/services" className="text-white hover:text-gold-vegas">
+            Services
+          </Link>
+          <Link href="/contact" className="text-white hover:text-gold-vegas">
+            Contact
+          </Link>
+          <Link href="/user/signin" className="text-white hover:text-gold-vegas">
+            Logowanie
+          </Link>
         </nav>
       </div>
     </header>

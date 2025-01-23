@@ -12,6 +12,9 @@ export default {
         mono: ['GeistMono', 'monospace'],
       },
       colors: {
+        goldVegas: "#C5B358", // Dodaj kolor Złoto Vegas
+        black: "#000000",
+        white: "#ffffff",
         background: "var(--background)",
         foreground: "var(--foreground)",
       },

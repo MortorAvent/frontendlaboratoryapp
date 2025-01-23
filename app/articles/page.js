@@ -1,9 +1,9 @@
 'use client';
 
 import { useEffect, useState } from "react";
-import { db } from "@/lib/firebase";
+import { db } from "@/app/lib/firebase";
 import { collection, query, where, getDocs } from "firebase/firestore";
-import { useAuth } from "@/lib/AuthContext";
+import { useAuth } from "@/app/lib/AuthContext";
 
 export default function ArticlesPage() {
   const { user } = useAuth();
