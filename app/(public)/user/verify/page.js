@@ -1,8 +1,8 @@
 'use client';
 import { signOut } from "firebase/auth";
-import { auth } from "@/lib/firebase";
+import { auth } from "@/app/lib/firebase";
 import { useEffect } from "react";
-import { useAuth } from "@/lib/AuthContext";
+import { useAuth } from "@/app/lib/AuthContext";
 
 export default function VerifyEmail() {
   const { user } = useAuth();
