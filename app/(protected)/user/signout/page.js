@@ -1,28 +1,26 @@
-'use client';
-import { useAuth } from '@/app/lib/AuthContext';
-import { useRouter } from 'next/navigation';
- 
-function LogoutPage() {
-  const { logout } = useAuth();
-  const router = useRouter();
- 
-  const handleLogout = async () => {
-    try {
-      await logout(); // Wywołanie funkcji wylogowania
-      router.replace('/'); // Przekierowanie na stronę główną
-    } catch (error) {
-      console.error('Błąd podczas wylogowywania:', error);
-    }
-  };
-  return (
-    <div className="h-screen flex items-center justify-center bg-var(--bg-main)">
-      <button
-        onClick={handleLogout}
-        className="rounded-md bg-var(--primary) px-12 py-3 text-lg font-medium text-white shadow-lg transition hover:bg-var(--primary-dark) focus:outline-none focus:ring-4 focus:ring-var(--primary-dark)">
-        Logout
-      </button>
-    </div>
-  );
-}
+"use client";
 
-export default LogoutPage;
+import { signOut } from "firebase/auth";
+import { auth } from "@/app/lib//firebase";
+import { useRouter } from "next/navigation";
+
+export default function LogoutForm(){
+
+    const router = useRouter();
+    
+    const onSubmit = () => {
+        signOut(auth);
+        router.push("/");
+    };
+    
+    return(
+        <div className="text-center">
+          <p className="text-lg mb-10 text-gray-200">
+            Zostałeś pomyślnie wylogowany!
+          </p>
+          <button onClick={onSubmit} className="text-black bg-[#C5B358] py-2 px-4 rounded-full hover:bg-white hover:text-[#C5B358] transition">
+            Przejdź do strony głównej
+          </button>
+        </div>
+    );
+}

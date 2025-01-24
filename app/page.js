@@ -14,52 +14,51 @@ function HomePage() {
   };
 
   return (
-    <div className="h-screen flex flex-col items-center justify-center bg-gradient-to-br from-var(--primary-dark) to-var(--primary)">
+    <div className="flex flex-col items-center justify-center  ">
       {user ? (
         // Sekcja dla zalogowanego użytkownika
-        <>
-          <h1 className="text-4xl font-bold text-white mb-6">
+        <div className="text-center">
+          <h1 className="text-5xl font-extrabold text-white mb-6">
             {greetingMessage()}, {user.displayName || 'Użytkowniku'}!
           </h1>
-          <p className="text-lg mb-8 text-center text-gray-200">
-            Jesteś zalogowany. Możesz teraz korzystać z dodatkowych funkcji aplikacji.
+          <p className="text-lg mb-10 text-gray-200">
+            Jesteś zalogowany. Odkryj pełen potencjał naszej aplikacji.
           </p>
-          <div className="flex space-x-4">
+          <div className="flex justify-center space-x-6">
             <Link href="/user/profile">
-              <div className="py-2 px-6 rounded-lg text-white bg-blue-500 hover:bg-blue-600 transition duration-300 shadow-lg">
+              <button className="py-3 px-8 rounded-full text-black bg-[#C5B358] hover:bg-white hover:text-[#C5B358] border border-[#C5B358] transition duration-300 shadow-md">
                 Przejdź do profilu
-              </div>
+              </button>
             </Link>
             <Link href="/user/signout">
-              <div className="py-2 px-6 rounded-lg text-white bg-red-500 hover:bg-red-600 transition duration-300 shadow-lg">
+              <button className="py-3 px-8 rounded-full text-white bg-red-600 hover:bg-red-700 transition duration-300 shadow-md">
                 Wyloguj się
-              </div>
+              </button>
             </Link>
           </div>
-        </>
+        </div>
       ) : (
         // Sekcja dla niezalogowanego użytkownika
-        <>
-          <h1 className="text-4xl font-bold text-white mb-6">
-            Witaj w aplikacji!
+        <div className="text-center">
+          <h1 className="text-5xl font-extrabold text-white mb-6">
+            Witaj w aplikacji Duda Athletics!
           </h1>
-          <p className="text-lg mb-8 text-center text-gray-200">
-            To jest strona główna aplikacji. Możesz się zalogować lub zarejestrować,
-            aby uzyskać więcej funkcji.
+          <p className="text-lg mb-10 text-gray-200">
+            Dołącz do nas, aby rozpocząć swoją drogę z treningiem personalnym.
           </p>
-          <div className="flex space-x-4">
+          <div className="flex justify-center space-x-6">
             <Link href="/user/signin">
-              <div className="py-2 px-6 rounded-lg text-white bg-blue-500 hover:bg-blue-600 transition duration-300 shadow-lg">
+              <button className="py-3 px-8 rounded-full text-black bg-[#C5B358] hover:bg-white hover:text-[#C5B358] border border-[#C5B358] transition duration-300 shadow-md">
                 Zaloguj się
-              </div>
+              </button>
             </Link>
             <Link href="/user/register">
-              <div className="py-2 px-6 rounded-lg text-white bg-green-500 hover:bg-green-600 transition duration-300 shadow-lg">
+              <button className="py-3 px-8 rounded-full text-black bg-white hover:bg-[#C5B358] hover:text-white border border-[#C5B358] transition duration-300 shadow-md">
                 Zarejestruj się
-              </div>
+              </button>
             </Link>
           </div>
-        </>
+        </div>
       )}
     </div>
   );

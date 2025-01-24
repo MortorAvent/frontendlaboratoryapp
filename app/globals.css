@@ -11,17 +11,22 @@
   .bg-gold-vegas {
     @apply bg-[#C5B358];
   }
-  .btn {
-    @apply px-4 py-2 font-bold rounded shadow-lg;
-  }
-  
-  .btn-primary {
-    @apply bg-gold-vegas text-black hover:bg-white hover:text-gold-vegas border border-gold-vegas;
-  }
-  
-  .btn-secondary {
-    @apply bg-black text-white hover:bg-gold-vegas hover:text-black border border-gold-vegas;
-  }
+  /* Przyciski */
+.btn {
+  @apply py-3 px-8 rounded-full transition duration-300 shadow-md font-bold;
+}
+
+.btn-primary {
+  @apply text-black bg-[#C5B358] hover:bg-white hover:text-[#C5B358] border border-[#C5B358];
+}
+
+.btn-secondary {
+  @apply text-black bg-white hover:bg-[#C5B358] hover:text-white border border-[#C5B358];
+}
+
+.btn-danger {
+  @apply text-white bg-red-600 hover:bg-red-700;
+}
 }
 /* Globalne style */
 body {
@@ -38,5 +43,19 @@ a {
 
 button {
   @apply transition ease-in-out duration-300;
+}
+/* Usuń marginesy i padding */
+html,
+body {
+  box-shadow: inset 0px 15px 50px 15px rgba(0, 0, 0, 0.5);
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background: linear-gradient(to bottom right, #000000, #C5B358);
+}
+
+/* Rozciągnij element root na całą wysokość */
+#__next {
+  height: 100%;
 }
 
