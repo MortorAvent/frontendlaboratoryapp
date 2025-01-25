@@ -19,22 +19,24 @@ function HomePage() {
         // Sekcja dla zalogowanego użytkownika
         <div className="text-center">
           <h1 className="text-5xl font-extrabold text-white mb-6">
-            {greetingMessage()}, {user.displayName || 'Użytkowniku'}!
+            {greetingMessage()}, {user.displayName || 'Jan Kowalski'}!
           </h1>
           <p className="text-lg mb-10 text-gray-200">
             Jesteś zalogowany. Odkryj pełen potencjał naszej aplikacji.
           </p>
+          
           <div className="flex justify-center space-x-6">
+          <Link href="/trainees/list">
+              <button className="py-3 px-8 rounded-full text-black bg-[#C5B358] hover:bg-white hover:text-[#C5B358] border border-[#C5B358] transition duration-300 shadow-md">
+                Lista Podopiecznych
+              </button>
+            </Link>
             <Link href="/user/profile">
               <button className="py-3 px-8 rounded-full text-black bg-[#C5B358] hover:bg-white hover:text-[#C5B358] border border-[#C5B358] transition duration-300 shadow-md">
                 Przejdź do profilu
               </button>
             </Link>
-            <Link href="/user/signout">
-              <button className="py-3 px-8 rounded-full text-white bg-red-600 hover:bg-red-700 transition duration-300 shadow-md">
-                Wyloguj się
-              </button>
-            </Link>
+            
           </div>
         </div>
       ) : (
